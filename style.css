@@ -1,6 +1,6 @@
 body {
     height: auto;
-    width: 100vw;
+    width: 98vw;
     background-color: hsl(36, 100%, 99%);
     margin: 0;
     margin-top: 30px 0;
@@ -163,25 +163,109 @@ hr{
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
     .grid-conteiner {
-        display: block; /* Remove o grid e faz com que os containers fiquem em linha */
-        gap: 15px;
-        margin: 25px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 30px);
+        margin: 0 auto;
     }
 
     .conteiner {
-        width: 100%; /* Faz com que os containers ocupem toda a largura disponível */
-        padding: 10px 0; /* Ajusta o espaçamento */
-       
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
     }
-
+    
     .menu {
         flex-direction: column;
         width: 100%;
         align-items: center;
+        padding: 20px 0;
     }
 
     h1 {
         font-size: 14px;
+    }
+
+    button {
+        background-color: hsl(5, 85%, 63%);
+        color: hsl(0, 0%, 0%);
+        font-weight: 700;
+    }
+
+    .conteiner:nth-child(1) img {
+        display: none; 
+    }
+
+    .conteiner:nth-child(1) {
+        background-image: url('assets/images/image-web-3-mobile.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+    }
+
+    .conteiner:nth-child(5) {
+        margin-bottom: -60px;
+        margin-left: 20px;
+    }
+
+    .conteiner:nth-child(4) {
+        margin-left: -20px;
+    }
+
+    .conteiner:nth-child(6),
+    .conteiner:nth-child(7),
+    .conteiner:nth-child(8) {
+        margin-top: -70px;
+    }
+
+    .conteiner:nth-child(1) { order: 1; }
+    .conteiner:nth-child(2) { order: 5; }
+    .conteiner:nth-child(3) { order: 4; }
+    .conteiner:nth-child(4) { order: 3; }
+    .conteiner:nth-child(5) { order: 2; }
+    .conteiner:nth-child(6) { order: 6; }
+    .conteiner:nth-child(7) { order: 7; }
+    .conteiner:nth-child(8) { order: 8; }
+
+
+    #menu-icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        margin-left: 15px;
+        display: none; 
+    }
+
+    .dialog-box {
+        position: fixed; 
+        top: 0px;
+        right: 1px;
+        background-color: hsl(0, 53%, 50%);
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        width: 70vw;
+        height: 100%;
+    }
+
+    .dialog-box.active {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .menu h1 {
+        display: none;
     }
 }
